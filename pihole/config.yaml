@@ -3,7 +3,7 @@ version: "2026.10.3"
 slug: "pihole"
 description: "Run the official Pi-hole Docker image on Home Assistant OS."
 url: "https://github.com/mubinbzs06/haos-pihole"
-image: "pihole/pihole"
+image: "pihole/pihole:2026.10.1"
 legacy: true
 arch:
   - aarch64
