@@ -1,26 +1,26 @@
 name: "Pi-hole"
+# renovate: datasource=docker depName=pihole/pihole
 version: "2026.10.1"
 slug: "pihole"
-description: "Run the official Pi-hole Docker image on Home Assistant OS."
+description: "Run the official Pi-hole container on Home Assistant OS."
 url: "https://github.com/mubinbzs06/haos-pihole"
-image: "pihole/pihole"
-legacy: true
+init: false
 arch:
   - aarch64
-  - armv7
   - amd64
 startup: application
 stage: experimental
 boot: auto
+watchdog: "tcp://[HOST]:[PORT:53]"
 webui: "http://[HOST]:[PORT:80]/admin/"
 ports:
-  "53/tcp": 55
-  "53/udp": 55
+  "53/tcp": 53
+  "53/udp": 53
   "80/tcp": 8081
 ports_description:
-  "53/tcp": "DNS over TCP (host port 55)"
-  "53/udp": "DNS over UDP (host port 55)"
-  "80/tcp": "Pi-hole web interface (host port 8081)"
+  "53/tcp": "DNS over TCP"
+  "53/udp": "DNS over UDP"
+  "80/tcp": "Pi-hole web interface"
 map:
   - type: app_config
     read_only: false
@@ -28,7 +28,11 @@ map:
 environment:
   FTLCONF_dns_listeningMode: "ALL"
 options:
-  FTLCONF_webserver_api_password: null
+  timezone: "UTC"
+  upstream_dns: []
 schema:
-  FTLCONF_webserver_api_password: password
+  password: "password?"
+  timezone: "str?"
+  upstream_dns:
+    - "str?"
 backup: cold
