@@ -15,4 +15,5 @@ if [ -f "$OPTIONS" ]; then
   if [ -n "$up" ]; then export FTLCONF_dns_upstreams="$up"; fi
 fi
 
-exec start.sh "$@"
+# Same entrypoint the official image uses: tini as PID 1, then start.sh.
+exec /sbin/tini -- start.sh "$@"
