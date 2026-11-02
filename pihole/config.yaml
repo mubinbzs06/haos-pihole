@@ -4,8 +4,10 @@ slug: "pihole"
 description: "Run the official Pi-hole Docker image on Home Assistant OS."
 url: "https://github.com/mubinbzs06/haos-pihole"
 image: "pihole/pihole"
+legacy: true
 arch:
   - aarch64
+  - armv7
   - amd64
 startup: application
 stage: experimental
