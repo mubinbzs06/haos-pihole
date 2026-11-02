@@ -12,14 +12,14 @@ arch:
 startup: application
 stage: experimental
 boot: auto
-webui: "http://[HOST]:[PORT:80]/admin/"
+webui: "http://192.168.50.2:[PORT:80]/admin/"
 ports:
-  "53/tcp": 53
-  "53/udp": 53
+  "53/tcp": 55
+  "53/udp": 55
   "80/tcp": 8081
 ports_description:
-  "53/tcp": "DNS over TCP"
-  "53/udp": "DNS over UDP"
+  "53/tcp": "DNS over TCP (host port 55)"
+  "53/udp": "DNS over UDP (host port 55)"
   "80/tcp": "Pi-hole web interface (host port 8081)"
 map:
   - type: app_config
