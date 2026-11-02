@@ -11,7 +11,7 @@ does not fork, copy, or modify Pi-hole's source code.
 **Experimental — packaging is committed, but it has not yet been installed or
 validated on a live Home Assistant OS host.**
 
-The app currently targets 64-bit `aarch64` and `amd64` systems and pins the
+The app currently targets `aarch64`, `armv7`, and `amd64` systems and pins the
 official Pi-hole image to `2026.10.1`.
 
 ## Current app settings
