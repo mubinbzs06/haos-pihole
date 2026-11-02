@@ -1,5 +1,5 @@
 name: "Pi-hole"
-version: "2026.10.2"
+version: "2026.10.3"
 slug: "pihole"
 description: "Run the official Pi-hole Docker image on Home Assistant OS."
 url: "https://github.com/mubinbzs06/haos-pihole"
@@ -12,7 +12,7 @@ arch:
 startup: application
 stage: experimental
 boot: auto
-webui: "http://192.168.50.2:[PORT:80]/admin/"
+webui: "http://[HOST]:[PORT:80]/admin/"
 ports:
   "53/tcp": 55
   "53/udp": 55
