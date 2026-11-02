@@ -1,5 +1,5 @@
 name: "Pi-hole"
-version: "2026.10.1"
+version: "2026.10.2"
 slug: "pihole"
 description: "Run the official Pi-hole Docker image on Home Assistant OS."
 url: "https://github.com/mubinbzs06/haos-pihole"
