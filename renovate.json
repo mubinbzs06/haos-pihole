@@ -10,7 +10,7 @@
         "/(^|/)config\\.yaml$/"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>\\S+)\\s+(?:ARG \\w+=|version: .)(?<currentValue>[^\\"\\s]+)"
+        "# renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>\\S+)\\s+(?:ARG \\w+=|version: .)(?<currentValue>[0-9.]+)"
       ]
     }
   ],
