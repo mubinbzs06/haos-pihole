@@ -27,4 +27,8 @@ map:
     path: /etc/pihole
 environment:
   FTLCONF_dns_listeningMode: "ALL"
+options:
+  FTLCONF_webserver_api_password: ""
+schema:
+  FTLCONF_webserver_api_password: password
 backup: cold
