@@ -7,4 +7,6 @@ FROM pihole/pihole:${PIHOLE_VERSION}
 COPY ha-entrypoint.sh /usr/local/bin/ha-entrypoint.sh
 RUN chmod +x /usr/local/bin/ha-entrypoint.sh
 
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 CMD pihole status || exit 1
+
 ENTRYPOINT ["/usr/local/bin/ha-entrypoint.sh"]
