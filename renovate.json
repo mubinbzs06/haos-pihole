@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "enabledManagers": ["custom.regex", "github-actions"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)Dockerfile$/",
+        "/(^|/)config\\.yaml$/"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>\\S+)\\s+(?:ARG \\w+=|version: \")(?<currentValue>[^\"\\s]+)"
+      ]
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["pihole/pihole"],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$",
+      "groupName": "pihole image",
+      "automerge": false,
+      "labels": ["pihole-update"],
+      "prBodyNotes": [
+        "Read the release notes before merging: https://github.com/pi-hole/docker-pi-hole/releases",
+        "Test on a live HAOS host, then bump the app changelog."
+      ]
+    }
+  ]
+}
