@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Translate Home Assistant app options into the environment variables the
-# official Pi-hole image expects, then hand off to its normal entrypoint.
+# official Pi-hole image expects, then run its original startup script.
 set -eu
 
 OPTIONS=/data/options.json
@@ -15,5 +15,5 @@ if [ -f "$OPTIONS" ]; then
   if [ -n "$up" ]; then export FTLCONF_dns_upstreams="$up"; fi
 fi
 
-# Same entrypoint the official image uses: tini as PID 1, then start.sh.
-exec /sbin/tini -- start.sh "$@"
+# The official image's ENTRYPOINT is start.sh; preserve its startup behavior.
+exec start.sh "$@"
