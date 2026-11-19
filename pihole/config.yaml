@@ -1,6 +1,6 @@
 name: "Pi-hole"
 # renovate: datasource=docker depName=pihole/pihole
-version: "2026.10.1"
+version: "2026.11.0"
 slug: "pihole"
 description: "Run the official Pi-hole container on Home Assistant OS."
 url: "https://github.com/mubinbzs06/haos-pihole"
