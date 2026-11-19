@@ -2,7 +2,7 @@
 
 ## What this app runs
 
-This app runs the official multi-architecture `pihole/pihole:2026.10.1`
+This app runs the official multi-architecture `pihole/pihole:2026.11.0`
 container image. It does not fork, rebuild, or modify Pi-hole source code.
 
 The app is experimental and has not yet been validated on a live Home Assistant
