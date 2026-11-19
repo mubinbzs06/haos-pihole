@@ -16,6 +16,13 @@
   ],
   "packageRules": [
     {
+      "description": "Automerge patch and minor GitHub Actions updates after all checks pass",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true,
+      "platformAutomerge": false
+    },
+    {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["pihole/pihole"],
       "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$",
